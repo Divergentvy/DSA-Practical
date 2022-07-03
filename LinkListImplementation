@@ -50,8 +50,8 @@ int main(){
     int n;
     printf("Enter Number of Nodes:");
     scanf("%d",&n);
-    node*HEAD = NULL;
-    HEAD = createNode(n);
-    display(HEAD);
+    node*ans = NULL;
+    ans = createNode(n);
+    display(ans);
     return 0;
 }
