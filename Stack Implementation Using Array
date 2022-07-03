@@ -1,0 +1,80 @@
+/*This Flie is Made by VISHESH YADAV (ECE-1) Netaji Subhas University Of technology*/
+
+
+#include <iostream>
+#include<stdio.h>
+using namespace std;
+
+int stack[100],n=100,top=-1;
+
+void push(int val){
+if(top==n-1){
+    cout << "Stack Overflow"<<endl;
+}
+else{
+ top++;
+stack[top]=val;
+}
+}
+
+void pop(){
+if(top==-1){
+    cout << "Stack Underflow"<<endl;
+}
+else{
+    cout << "The Popped item is "<<stack[top]<<endl;
+    top--;
+}
+}
+void display(){
+if(top==-1){
+    cout << "Stack is empty"<<endl;
+}
+else{
+    for(int i=top;i>=0;i--){
+        cout << stack[i]<<" ";
+
+    }
+    cout <<endl;
+}
+}
+int main(){
+int val,ch;
+cout << "1) Push Element in stack:"<<endl;
+cout << "2) PoP Element in stack:"<<endl;
+cout << "3) Display Elements of stack:"<<endl;
+cout << "4) Exit:"<<endl;
+do{
+    cout << "Enter Choice: ";
+    cin>>ch;
+    switch(ch){
+    case 1:{
+    cout <<"Enter Element to Push:";cin>>val;
+    push(val);
+    break;
+    }
+    case 2: {
+    pop();
+    break;
+    }
+    case 3:{
+    display();
+    break;
+    }
+    case 4:{
+        cout <<"Exit"<<endl;
+        break;
+    }
+    default: {
+        cout << "Invalid Choice"<<endl;
+    }
+    }
+}
+    while(ch!=4);
+
+return 0;
+}
+
+
+
+
