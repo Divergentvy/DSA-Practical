@@ -1,0 +1,67 @@
+
+
+
+#include <stdio.h>
+#include<stdlib.h>
+#define n 100
+
+int main(){
+    int queu[n],front=-1,rear=-1,j=1,ch,val,maxsize;
+    printf("Enter max size:\n");
+    scanf("%d",&maxsize);
+   while(1){
+    printf("1.Insertion \n 2.deletion \n 3.Display \n 4.Exit\n");
+    scanf("%d",&ch);
+    switch(ch){
+        case 1:{
+            printf("\nEnter element to insert:");
+            scanf("%d",&val);
+            if(rear==maxsize-1){
+                printf("Overflow");
+            }
+            if(front==-1 && rear==-1){
+                rear = 0;
+                front = 0;
+            }
+            else{
+                
+                rear++;
+            }
+            queu[rear]=val;
+            printf("Element inserted\n");
+            break;
+        }
+        case 2:{
+            if(front==-1 || front > rear){
+                printf("que is empty\n");
+            }
+            else{
+                if(front==rear){
+                    front = -1;
+                    rear =-1;
+                }
+                else{
+                    front++;
+                }
+                printf("Value deleted\n");
+                
+            }
+            
+            break;
+        }
+        case 3:{
+            if(rear==-1){
+                printf("The queu is empty\n");
+            }
+            else{
+                for(int i=front ;i<=rear;i++){
+                    printf("%d\n",queu[i]);
+                }
+            }
+            break;
+        }
+        case 4: exit(0);
+        default : printf("The choice entered is wrong\n");
+    }
+   }
+}
