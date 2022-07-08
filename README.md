@@ -1,3 +1,3 @@
 # DSA-Practical
-Practice for Lab purpose 
-This repository is my personel practice one and is for learning purpose only and does not promote staright away coping codes.
+Practice for Lab 
+This repository is for my practice and only shared with intention of learning purpose and does not promote coping of codes
