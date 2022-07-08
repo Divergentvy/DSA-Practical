@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node{
+    int data;
+    struct node * next;
+}node;
+
+node*head=NULL;
+node*temp=NULL;
+node*p=NULL; 
+
+node * createnewnode(int n){
+    int i;
+    for(i=0;i<n;i++){
+temp=(node*)malloc(sizeof(node));
+printf("Enter element: ",i+1);
+scanf("%d",&temp->data);
+temp->next=NULL;
+
+if(head=NULL){
+    head=temp;
+}
+
+else{
+    p=head;
+    while(p->next!=NULL){
+        p=p->next;
+    }
+    p->next = temp;
+}
+ 
+}
+return head;
+}
+
+void removeDuplicates(node*head){
+node *ptr1,*ptr2,*dup;
+ptr1 = head;
+while(ptr1!=NULL && ptr1->next!=NULL){
+ptr2=ptr1;
+
+while(ptr2->next !=NULL){
+    if(ptr1->data == ptr2->next->data ){
+        dup=ptr2->next;
+        ptr2->next=ptr2->next->next;
+        free(dup);
+    }
+    else{
+        ptr2=ptr2->next;
+    }
+} 
+  ptr1=ptr1->next;
+}
+}
+
+void display(node*head){
+    p=head;
+    while(p!=NULL){
+        printf("%d->",p->data);
+       p=p->next;
+    }
+    printf("NULL\n");
+}
+
+int main(){
+    int n;
+    printf("Enter Number of nodes: ");
+    scanf("%d",&n);
+
+    node*ans2;
+    ans2=createnewnode(n);
+    display(ans2);
+    removeDuplicates(head);
+    display(ans2);
+
+}
