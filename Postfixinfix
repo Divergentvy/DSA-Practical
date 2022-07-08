@@ -63,17 +63,17 @@ void infix_to_postfix()
                                         postfix[p++]=pop();
                                 push(symbol);
                                 break;
-                        default: /*if an operand comes*/
+                        default: 
                              postfix[p++]=symbol;
                         }
                 }
         }
         while(!isEmpty( ))
                 postfix[p++]=pop();
-        postfix[p]='\0'; /*End postfix with'\0' to make it a string*/
-}/*End of infix_to_postfix()*/
+        postfix[p]='\0'; 
+}
 
-/*This function returns the priority of the operator*/
+
 int priority(char symbol)
 {
         switch(symbol)
@@ -92,7 +92,7 @@ int priority(char symbol)
         default :
                 return 0;
         }
-}/*End of priority()*/
+}
 
 void push(long int symbol)
 {
@@ -102,7 +102,7 @@ void push(long int symbol)
                 exit(1);
         }
         stack[++top]=symbol;
-}/*End of push()*/
+}
 
 long int pop()
 {
@@ -112,14 +112,14 @@ long int pop()
                 exit(1);
         }
         return (stack[top--]);
-}/*End of pop()*/
+}
 int isEmpty()
 {
         if(top==-1)
                 return 1;
         else
                 return 0;
-}/*End of isEmpty()*/
+}
 
 int white_space(char symbol)
 {
@@ -127,7 +127,7 @@ int white_space(char symbol)
                 return 1;
         else
                 return 0;
-}/*End of white_space()*/
+}
 
 long int eval_post()
 {
@@ -162,4 +162,4 @@ long int eval_post()
         }
         result=pop();
         return result;
-}/*End of eval_post */
+}
