@@ -1,0 +1,96 @@
+
+
+
+#include <stdio.h>
+#define n 100
+
+int top1=-1,top2=n,arr[n];
+
+void push1(int val){
+    if(top1<top2-1){
+        arr[++top1]=val;
+    }
+    else{
+        printf("Stack is full\n");
+    }
+}
+ 
+void push2(int val){
+    if(top1<top2-1){
+        arr[--top2]=val;
+    }
+    else{
+        printf("Stack is full\n");
+    }
+}
+
+void pop1(){
+ if(top1>=0){
+    int popped_value= arr[top1--];
+    printf("%d has been popped\n",popped_value); 
+ }
+ else{
+    printf("Stack is empty\n");
+ }
+}
+
+void pop2(){
+    if(top2<n){
+        int popped=arr[top2++];
+        printf("%d element popped\n",popped);
+    }
+}
+
+void display1(){
+    int i;
+    for(i=top1;i>=0;i--){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+
+void display2(){
+    int i;
+    for(i=top2;i<n;i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
+
+int main(){
+    int val,ch;
+    while(1){
+        printf("Enter choice\n1.Insert in stack1\n2.Insert in stack2\n3.pop in stack1\n4.pop in stack2\n5.display stack1\n6.display stack2\n");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1:{
+                printf("Enter element to push: ");
+                scanf("%d",&val);
+                push1(val);
+                break;
+            }
+            case 2:{
+                printf("Enter element to push: ");
+                scanf("%d",&val);
+                push2(val);
+                break;
+            }
+            case 3 : {
+                pop1();
+                break;
+            }
+            case 4:{
+                pop2();
+                break;
+            }
+            case 5:{
+                display1();
+                break;
+            }
+            case 6:{
+                display2();
+            }
+            default:printf("Invalid!\n");
+        }
+    }
+}
