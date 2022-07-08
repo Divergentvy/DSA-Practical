@@ -74,7 +74,7 @@ int main(){
     node*ans2;
     ans2=createnewnode(n);
     display(ans2);
-    removeDuplicates(head);
+    removeDuplicates(ans2);
     display(ans2);
 
 }
